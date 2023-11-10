@@ -8,6 +8,7 @@ const Router = () => {
         <Routes>
             <Route path="/" element={<PostalForm />} />
             <Route path="/location" element={<LocationInfo />} />
+            <Route path="*" element={<PostalForm />} />
         </Routes>
     )
 }
