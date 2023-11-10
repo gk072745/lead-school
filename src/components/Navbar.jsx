@@ -10,7 +10,6 @@ import { ImLocation2 } from "react-icons/im"
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     const navigate = useNavigate()
-    const { pathname } = useLocation()
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
@@ -20,14 +19,12 @@ const Navbar = () => {
                     <Icon as={ImLocation2} fontSize={{ base: "24px", md: "30px" }} />
                 </Box>
                 <Box >
-                    {
-                        pathname === "/" ? <Button fontSize={"24px"} variant='link' onClick={() => navigate("/location")}>
-                            Location
-                        </Button> :
-                            <Button fontSize={"24px"} variant='link' onClick={() => navigate("/")}>
-                                Form
-                            </Button>
-                    }
+
+
+                    <Button fontSize={"24px"} variant='link' onClick={() => navigate("/")}>
+                        Form
+                    </Button>
+
                 </Box>
                 <Flex alignItems={'center'}>
                     <Stack direction={'row'} spacing={7}>
