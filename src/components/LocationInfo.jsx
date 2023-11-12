@@ -12,7 +12,6 @@ const LocationInfo = () => {
     const navigate = useNavigate();
 
 
-
     return (
         <>
             {isLoading ? (
@@ -35,7 +34,7 @@ const LocationInfo = () => {
                             Address Not Found
                         </Text>
                         <Text fontSize={["16px", "18px"]} color={'gray.500'} mb={6}>
-                            'No info for this location. try other postal code!'
+                            No info for this location. try other postal code!
                         </Text>
 
                         <Button

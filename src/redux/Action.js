@@ -26,6 +26,13 @@ export const getLocationFailure = (payload) => {
     payload,
   };
 };
+// ...........clear state
+
+export const clearLocation = () => {
+  return {
+    type: types.CLEAR_LOCATION,
+  };
+};
 
 export const getLocation = (postalCode) => (dispatch) => {
   dispatch(getLocationRequest());
@@ -36,6 +43,16 @@ export const getLocation = (postalCode) => (dispatch) => {
       dispatch(getLocationSuccess(result.data));
     })
     .catch((error) => {
-      dispatch(getLocationFailure(error)); // Pass the error object directly
+      dispatch(getLocationFailure(error));
     });
+};
+
+export const clearLocationFunc = () => (dispatch) => {
+  dispatch(getLocationRequest());
+
+  try {
+    dispatch(clearLocation());
+  } catch (error) {
+    dispatch(getLocationFailure(error));
+  }
 };
